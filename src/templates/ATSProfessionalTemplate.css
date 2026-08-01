@@ -1,0 +1,302 @@
+.ats-template {
+  width: 210mm;
+  max-width: 100%;
+  min-height: 297mm;
+  background: var(--tpl-bg, #ffffff);
+  padding: 40px 46px;
+  font-family: var(--tpl-font, "Inter"), sans-serif;
+  color: #1f2126;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.ats-header {
+  text-align: center;
+  border-bottom: 2px solid #1f2126;
+  padding-bottom: 16px;
+  margin-bottom: 22px;
+}
+
+.ats-header h1 {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-size: clamp(20px, 5vw, 28px);
+  word-break: break-word;
+}
+
+.ats-role {
+  color: var(--tpl-primary, #1f2126);
+  font-weight: 600;
+  margin-top: 4px;
+  font-size: clamp(13px, 3.2vw, 16px);
+}
+
+.ats-contact-line {
+  font-size: 0.85em;
+  color: #4b4f5a;
+  margin-top: 8px;
+  word-break: break-word;
+}
+
+.ats-block {
+  margin-bottom: 18px;
+}
+
+.ats-heading {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #1f2126;
+  border-bottom: 1px solid #c7c9d1;
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+  font-size: clamp(12px, 2.6vw, 14px);
+}
+
+.ats-entry {
+  margin-bottom: 12px;
+}
+
+.ats-entry-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  font-size: 1em;
+}
+
+.ats-entry-row span {
+  font-size: 0.82em;
+  color: #5b5f6b;
+  white-space: nowrap;
+}
+
+.ats-sub {
+  font-size: 0.85em;
+  color: #5b5f6b;
+  margin-top: 2px;
+  word-break: break-word;
+}
+
+.ats-text {
+  font-size: 0.9em;
+  color: #33353d;
+  line-height: 1.6;
+  margin-top: 4px;
+  white-space: pre-line;
+  word-break: break-word;
+}
+
+/* =========================================================
+   RESPONSIVE — screen breakpoints (editor/preview me dikhne ke liye)
+   ========================================================= */
+
+/* Large desktop / big monitors — extra breathing room */
+@media (min-width: 1440px) {
+  .ats-template {
+    padding: 46px 54px;
+  }
+}
+
+/* Small laptop / large tablet landscape */
+@media (max-width: 1200px) {
+  .ats-template {
+    padding: 38px 42px;
+  }
+}
+
+@media (max-width: 992px) {
+  .ats-template {
+    width: 100%;
+    min-height: 0;
+    padding: 34px 36px;
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 768px) {
+  .ats-template {
+    padding: 28px 28px;
+  }
+
+  .ats-header {
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+
+  .ats-block {
+    margin-bottom: 16px;
+  }
+}
+
+/* Large phone (landscape phones / small tablets) */
+@media (max-width: 600px) {
+  .ats-template {
+    padding: 22px 18px;
+  }
+
+  .ats-header {
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+
+  .ats-block {
+    margin-bottom: 14px;
+  }
+
+  .ats-entry-row {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .ats-entry-row span {
+    white-space: normal;
+  }
+}
+
+/* Standard phone (most phones: iPhone, mid-range Android) */
+@media (max-width: 480px) {
+  .ats-template {
+    padding: 18px 14px;
+  }
+
+  .ats-header {
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+
+  .ats-heading {
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+
+  .ats-block {
+    margin-bottom: 12px;
+  }
+
+  .ats-entry {
+    margin-bottom: 10px;
+  }
+}
+
+/* Small phones (e.g. iPhone SE, older Android) */
+@media (max-width: 360px) {
+  .ats-template {
+    padding: 14px 10px;
+  }
+
+  .ats-contact-line {
+    font-size: 0.78em;
+  }
+
+  .ats-text,
+  .ats-sub {
+    font-size: 0.82em;
+  }
+}
+
+/* Extra small / very narrow devices */
+@media (max-width: 320px) {
+  .ats-template {
+    padding: 12px 8px;
+  }
+
+  .ats-header h1 {
+    font-size: 18px;
+  }
+
+  .ats-role {
+    font-size: 12px;
+  }
+}
+/* ============================================================
+   MOBILE FIX — resume preview ko phone screen ke andar fully fit
+   aur scrollable banata hai (Editor.css ke end mein add karo)
+   ============================================================ */
+
+@media (max-width: 640px) {
+  /* Preview area ko center karo aur horizontal cut hone se roko */
+  .editor-preview-stage {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-x: hidden; /* left-right cut/scroll khatam */
+    overflow-y: auto; /* upar-neeche poora page dekh sakte ho */
+    padding: 14px 6px 50px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Zoom controls JS state (72% etc) ko yahan override karo,
+     taaki page phone width ke andar hi fit ho jaaye */
+  .a4-page {
+    transform: scale(0.42) !important;
+    transform-origin: top center !important;
+    margin: 0 auto !important;
+  }
+
+  /* Scale karne ke baad page apni ORIGINAL height jitni jagah
+     leta hai (blank/khaali space chhod deta hai neeche) —
+     isliye wrapper ki height bhi scale ke hisaab se set karo */
+  .editor-preview-stage {
+    height: calc(297mm * 0.42 + 60px);
+  }
+}
+
+/* Chhote phones (iPhone SE, purane Android) ke liye aur chhota */
+@media (max-width: 420px) {
+  .a4-page {
+    transform: scale(0.34) !important;
+  }
+
+  .editor-preview-stage {
+    height: calc(297mm * 0.34 + 50px);
+  }
+}
+
+/* Bahut chhoti screens */
+@media (max-width: 340px) {
+  .a4-page {
+    transform: scale(0.28) !important;
+  }
+
+  .editor-preview-stage {
+    height: calc(297mm * 0.28 + 40px);
+  }
+}
+
+/* Zoom +/- buttons ko mobile par chhupa do — kyunki ab auto-fit hai */
+@media (max-width: 640px) {
+  .zoom-controls {
+    display: none;
+  }
+}
+
+/* =========================================================
+   PRINT — jab PDF export ho ya window.print() chale,
+   hamesha sahi A4 size use ho (screen ke chhote size se independent)
+   ========================================================= */
+@media print {
+  .ats-template {
+    width: 210mm;
+    min-height: 297mm;
+    max-width: none;
+    padding: 40px 46px;
+  }
+
+  .ats-header h1 {
+    font-size: 24px;
+  }
+
+  .ats-role {
+    font-size: 15px;
+  }
+
+  .ats-entry-row {
+    flex-direction: row;
+  }
+
+  .ats-entry-row span {
+    white-space: nowrap;
+  }
+}

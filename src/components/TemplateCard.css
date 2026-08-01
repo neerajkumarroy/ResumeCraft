@@ -1,0 +1,169 @@
+.tcard {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Soft glow ring that fades in on hover, sits behind the card */
+.tcard::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--color-primary), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.tcard:hover {
+  box-shadow:
+    var(--shadow-md),
+    0 0 0 1px rgba(var(--color-primary-rgb), 0.25);
+  border-color: var(--color-primary);
+}
+
+.tcard:hover::before {
+  opacity: 1;
+}
+
+.tcard-thumb {
+  position: relative;
+  aspect-ratio: 210 / 297;
+  background: var(--color-canvas);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.tcard-thumb-scale {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+.tcard-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 6, 9, 0.6);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.tcard:hover .tcard-overlay,
+.tcard-tapped .tcard-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tcard-btn {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.tcard-btn:active {
+  transform: scale(0.95);
+}
+
+.tcard-tap-hint {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-soft);
+  background: rgba(6, 6, 9, 0.55);
+  padding: 4px 10px;
+  border-radius: 100px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  display: none;
+}
+
+/* Only show the tap hint on touch devices, and hide it once the overlay is active */
+@media (hover: none) {
+  .tcard-tap-hint {
+    display: block;
+    opacity: 1;
+  }
+
+  .tcard-tapped .tcard-tap-hint {
+    opacity: 0;
+  }
+}
+
+.tcard-info {
+  padding: 16px 18px 20px;
+}
+
+.tcard-info-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.tcard-info-top h4 {
+  font-size: 16px;
+  color: var(--color-text);
+  transition: color 0.2s ease;
+}
+
+.tcard:hover .tcard-info-top h4 {
+  color: var(--color-primary-light);
+}
+
+.tcard-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tcard-tag {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--color-primary-soft);
+  color: var(--color-primary-light);
+  padding: 3px 8px;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.tcard-tag:hover {
+  background: var(--color-primary);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.tcard-info p {
+  font-size: 13px;
+  color: var(--color-text-soft);
+  line-height: 1.55;
+}

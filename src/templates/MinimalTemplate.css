@@ -1,0 +1,68 @@
+.min-template {
+  width: 210mm;
+  min-height: 297mm;
+  background: #fff;
+  padding: 50px 56px;
+  font-family: var(--tpl-font, 'Inter'), sans-serif;
+  color: #26282f;
+}
+
+.min-header {
+  margin-bottom: 30px;
+}
+
+.min-header h1 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.min-role {
+  color: var(--tpl-primary, #111827);
+  font-weight: 500;
+  margin-top: 4px;
+  opacity: 0.75;
+}
+
+.min-contact {
+  font-size: 0.8em;
+  color: #8a8d99;
+  margin-top: 10px;
+  letter-spacing: 0.02em;
+}
+
+.min-block {
+  margin-bottom: 22px;
+}
+
+.min-heading {
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tpl-primary, #111827);
+  margin-bottom: 12px;
+  opacity: 0.85;
+}
+
+.min-entry {
+  margin-bottom: 12px;
+}
+
+.min-entry-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.min-entry-row span {
+  font-size: 0.78em;
+  color: #9a9dab;
+  white-space: nowrap;
+}
+
+.min-text {
+  font-size: 0.88em;
+  color: #4d5061;
+  margin-top: 4px;
+  line-height: 1.7;
+  white-space: pre-line;
+}

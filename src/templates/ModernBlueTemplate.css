@@ -1,0 +1,150 @@
+.mb-template {
+  display: grid;
+  grid-template-columns: 34% 66%;
+  width: 210mm;
+  min-height: 297mm;
+  background: #fff;
+  font-family: var(--tpl-font, "Inter"), sans-serif;
+  color: #23262f;
+}
+
+.mb-sidebar {
+  background: var(--tpl-secondary, #171923);
+  color: #fff;
+  padding: 34px 26px;
+}
+
+.mb-photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--tpl-primary, #4f46e5);
+  margin-bottom: 16px;
+}
+
+.mb-name {
+  font-weight: 800;
+  margin-bottom: 4px;
+  word-break: break-word;
+}
+
+.mb-role {
+  color: var(--tpl-primary, #818cf8);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.mb-contact {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 16px;
+  margin-bottom: 22px;
+}
+
+.mb-contact p {
+  font-size: 0.85em;
+  margin-bottom: 8px;
+  word-break: break-word;
+  opacity: 0.9;
+}
+
+.mb-side-block {
+  margin-bottom: 24px;
+}
+
+.mb-side-block h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--tpl-primary, #818cf8);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.mb-skill {
+  margin-bottom: 10px;
+  font-size: 0.85em;
+}
+
+.mb-skill span {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.mb-skill-bar {
+  height: 5px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.mb-skill-fill {
+  height: 100%;
+  background: var(--tpl-primary, #4f46e5);
+  border-radius: 6px;
+}
+
+.mb-line {
+  font-size: 0.85em;
+  margin-bottom: 8px;
+  opacity: 0.92;
+}
+
+.mb-main {
+  padding: 36px 32px;
+}
+
+.mb-main-block {
+  margin-bottom: 22px;
+}
+
+.mb-main-block h3 {
+  color: var(--tpl-primary, #4f46e5);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  border-bottom: 2px solid var(--tpl-primary, #4f46e5);
+  padding-bottom: 6px;
+  margin-bottom: 14px;
+}
+
+.mb-summary {
+  color: #444857;
+  line-height: 1.6;
+}
+
+.mb-entry {
+  margin-bottom: 14px;
+}
+
+.mb-entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 1em;
+}
+
+.mb-entry-head span {
+  font-size: 0.8em;
+  color: #7c8093;
+  white-space: nowrap;
+}
+
+.mb-entry-sub {
+  color: #6a6f80;
+  font-size: 0.88em;
+  margin-top: 2px;
+}
+
+.mb-entry-desc {
+  color: #4a4e5c;
+  font-size: 0.88em;
+  margin-top: 6px;
+  line-height: 1.55;
+  white-space: pre-line;
+}
+
+.mb-link {
+  color: var(--tpl-primary, #4f46e5);
+  font-size: 0.8em;
+}

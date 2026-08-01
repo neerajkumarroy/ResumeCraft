@@ -1,0 +1,80 @@
+.rcard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.rcard:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.rcard-thumb {
+  position: relative;
+  aspect-ratio: 210 / 297;
+  background: var(--color-canvas);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.rcard-thumb-scale {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0.365);
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+.rcard-thumb-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 70%, rgba(0, 0, 0, 0.25));
+}
+
+.rcard-body {
+  padding: 16px 18px 18px;
+}
+
+.rcard-body h4 {
+  font-size: 15px;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-text);
+}
+
+.rcard-meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--color-text-soft);
+  margin-bottom: 14px;
+}
+
+.rcard-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.rcard-delete {
+  color: var(--color-danger);
+  margin-left: auto;
+}
+
+.rcard-confirm {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  font-size: 12.5px;
+  color: var(--color-text-soft);
+  animation: fadeIn 0.2s ease;
+}
