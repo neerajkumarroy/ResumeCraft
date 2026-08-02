@@ -1,7 +1,12 @@
 .preview-only {
   min-height: 100vh;
   background: var(--color-canvas);
+  overflow-x: hidden;
 }
+
+/* ============================================================
+   TOP BAR — buttons keep their size, title shrinks + truncates
+   ============================================================ */
 
 .preview-only-bar {
   height: 68px;
@@ -10,50 +15,110 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
   padding: 0 26px;
   position: sticky;
   top: 0;
   z-index: 20;
 }
 
+.preview-only-bar .btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
 .preview-only-title {
   font-weight: 700;
   font-family: var(--font-heading);
   color: var(--color-text);
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 6px;
 }
+
+/* ============================================================
+   PREVIEW STAGE
+   ============================================================ */
 
 .preview-only-stage {
   padding: 40px 20px 80px;
   display: flex;
   justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .preview-only-page {
   box-shadow: var(--shadow-lg);
-  transform: scale(1);
   animation: fadeInUp 0.4s var(--ease-smooth) both;
 }
 
-@media (max-width: 880px) {
+/* ============================================================
+   MOBILE FIT — using CSS "zoom" instead of "transform: scale()".
+   Unlike transform, zoom actually shrinks the element's real
+   layout box (not just how it looks), so the browser reflows
+   everything around it correctly on its own. No JS measurement,
+   no manual frame-sizing, no guessing the template's width —
+   this just works for any template, any width, automatically.
+   ============================================================ */
+
+@media (max-width: 900px) {
   .preview-only-page {
-    transform: scale(0.62);
-    transform-origin: top center;
-    margin-bottom: -400px;
+    zoom: 0.62;
+  }
+}
+
+@media (max-width: 700px) {
+  .preview-only-page {
+    zoom: 0.5;
   }
 }
 
 @media (max-width: 560px) {
   .preview-only-bar {
-    padding: 0 14px;
-    height: 60px;
+    padding: 0 12px;
+    height: 58px;
+    gap: 6px;
+  }
+
+  .preview-only-bar .btn {
+    padding: 8px 12px;
+    font-size: 12.5px;
   }
 
   .preview-only-title {
-    font-size: 14px;
+    font-size: 13px;
+  }
+
+  .preview-only-stage {
+    padding: 18px 10px 40px;
   }
 
   .preview-only-page {
-    transform: scale(0.42);
-    margin-bottom: -600px;
+    zoom: 0.42;
+  }
+}
+
+@media (max-width: 400px) {
+  .preview-only-bar .btn span {
+    display: none;
+  }
+
+  .preview-only-page {
+    zoom: 0.34;
+  }
+}
+
+/* Fallback for the rare browser without "zoom" support (older
+   Firefox): scale it visually and let the page scroll sideways
+   instead of silently showing it full-size and cut off. */
+@supports not (zoom: 1) {
+  .preview-only-stage {
+    overflow-x: auto;
+    justify-content: flex-start;
   }
 }

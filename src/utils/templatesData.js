@@ -1,7 +1,7 @@
 export const TEMPLATES = [
   {
     id: 'modern-blue',
-    name: 'Modern Blue',
+    name: 'Modern ',
     description: 'A bold sidebar layout with a confident indigo accent. Great all-rounder.',
     tags: ['Popular', 'Two-column'],
     defaultColor: '#4f46e5',
@@ -10,7 +10,7 @@ export const TEMPLATES = [
   },
   {
     id: 'ats-professional',
-    name: 'ATS Professional',
+    name: 'ATS Pro',
     description: 'Single-column, no graphics — built to sail through applicant tracking systems.',
     tags: ['ATS-Friendly'],
     defaultColor: '#1f2937',
@@ -19,7 +19,7 @@ export const TEMPLATES = [
   },
   {
     id: 'creative',
-    name: 'Creative',
+    name: 'Fresh',
     description: 'A vivid header band and playful accents for design & marketing roles.',
     tags: ['Bold'],
     defaultColor: '#ea580c',

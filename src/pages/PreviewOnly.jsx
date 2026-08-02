@@ -1,12 +1,12 @@
-import React, { useMemo } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
-import TemplateRenderer from '../templates/TemplateRenderer.jsx';
-import { buildSampleResume } from '../utils/sampleResume';
-import { getTemplateMeta } from '../utils/templatesData';
-import { useResume } from '../context/ResumeContext.jsx';
-import { upsertResume } from '../services/storageService';
-import './PreviewOnly.css';
+import React, { useMemo } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { FiArrowLeft } from "react-icons/fi";
+import TemplateRenderer from "../templates/TemplateRenderer.jsx";
+import { buildSampleResume } from "../utils/sampleResume";
+import { getTemplateMeta } from "../utils/templatesData";
+import { useResume } from "../context/ResumeContext.jsx";
+import { upsertResume } from "../services/storageService";
+import "./PreviewOnly.css";
 
 const PreviewOnly = () => {
   const { templateId } = useParams();
@@ -24,12 +24,15 @@ const PreviewOnly = () => {
   return (
     <div className="preview-only">
       <div className="preview-only-bar">
-        <button className="btn btn-ghost" onClick={() => navigate('/templates')}>
-          <FiArrowLeft /> Back to templates
+        <button
+          className="btn btn-ghost"
+          onClick={() => navigate("/templates")}
+        >
+          <FiArrowLeft /> <span>Back to templates</span>
         </button>
         <div className="preview-only-title">{meta.name}</div>
         <button className="btn btn-primary" onClick={handleUseTemplate}>
-          Use This Template
+          <span>Use This Template</span>
         </button>
       </div>
 
