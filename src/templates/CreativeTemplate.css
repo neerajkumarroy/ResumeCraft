@@ -2,12 +2,16 @@
   width: 210mm;
   min-height: 297mm;
   background: #fff;
-  font-family: var(--tpl-font, 'Inter'), sans-serif;
+  font-family: var(--tpl-font, "Inter"), sans-serif;
   color: #23262f;
 }
 
 .cr-header {
-  background: linear-gradient(120deg, var(--tpl-primary, #ea580c), var(--tpl-header-end, #1e1b4b));
+  background: linear-gradient(
+    120deg,
+    var(--tpl-primary, #ea580c),
+    var(--tpl-header-end, #1e1b4b)
+  );
   color: #fff;
   padding: 34px 40px;
   display: flex;
@@ -58,8 +62,8 @@
 }
 
 .cr-heading span {
-  background: var(--tpl-tint, #fde8db);
-  color: var(--tpl-primary, #ea580c);
+  /* background: var(--tpl-tint, #fde8db);
+  color: var(--tpl-primary, #ea580c); */
   padding: 5px 14px;
   border-radius: 100px;
   font-weight: 700;
@@ -115,8 +119,8 @@
 }
 
 .cr-tag {
-  background: var(--tpl-tint, #fde8db);
-  color: var(--tpl-primary, #ea580c);
+  /* background: var(--tpl-tint, #fde8db);
+  color: var(--tpl-primary, #ea580c); */
   padding: 5px 12px;
   border-radius: 8px;
   font-size: 0.82em;
