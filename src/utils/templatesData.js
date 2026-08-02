@@ -11,11 +11,11 @@ export const TEMPLATES = [
   {
     id: 'ats-professional',
     name: 'ATS Pro',
-    description: 'Single-column, no graphics — built to sail through applicant tracking systems.',
-    tags: ['ATS-Friendly'],
-    defaultColor: '#1f2937',
-    defaultSecondary: '#1f2937',
-    defaultFont: 'Roboto',
+    description: 'A vivid header band and playful accents for design & marketing roles.',
+    tags: ['Bold'],
+    defaultColor: '#ea580c',
+    defaultSecondary: '#1e1b4b',
+    defaultFont: 'Poppins'
   },
   {
     id: 'creative',

@@ -58,7 +58,7 @@
 }
 
 /* ============================================================
-   MOBILE FIT — using CSS "zoom" instead of "transform: scale()".
+   RESPONSIVE — using CSS "zoom" instead of "transform: scale()".
    Unlike transform, zoom actually shrinks the element's real
    layout box (not just how it looks), so the browser reflows
    everything around it correctly on its own. No JS measurement,
@@ -66,18 +66,58 @@
    this just works for any template, any width, automatically.
    ============================================================ */
 
+/* Large tablet / small laptop */
+@media (max-width: 1024px) {
+  .preview-only-page {
+    zoom: 0.78;
+  }
+}
+
+/* Tablet landscape */
 @media (max-width: 900px) {
+  .preview-only-stage {
+    padding: 32px 16px 60px;
+  }
+
   .preview-only-page {
     zoom: 0.62;
   }
 }
 
+/* Tablet portrait */
+@media (max-width: 768px) {
+  .preview-only-bar {
+    padding: 0 16px;
+  }
+
+  .preview-only-stage {
+    padding: 28px 14px 50px;
+  }
+
+  .preview-only-page {
+    zoom: 0.56;
+  }
+}
+
+/* Large phone (landscape phones / small tablets) */
 @media (max-width: 700px) {
   .preview-only-page {
     zoom: 0.5;
   }
 }
 
+/* Standard phone */
+@media (max-width: 600px) {
+  .preview-only-stage {
+    padding: 22px 12px 45px;
+  }
+
+  .preview-only-page {
+    zoom: 0.46;
+  }
+}
+
+/* Common phone width (iPhone 12/13/14, mid-range Android) */
 @media (max-width: 560px) {
   .preview-only-bar {
     padding: 0 12px;
@@ -103,9 +143,68 @@
   }
 }
 
+/* Narrower phones */
+@media (max-width: 480px) {
+  .preview-only-bar {
+    gap: 4px;
+  }
+
+  .preview-only-bar .btn {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .preview-only-page {
+    zoom: 0.38;
+  }
+}
+
+/* Small phones (iPhone SE, older Android) — hide button labels,
+   keep icons only, so the bar never feels cramped */
 @media (max-width: 400px) {
-  .preview-only-bar .btn span {
+  .preview-only-bar {
+    padding: 0 8px;
+    height: 52px;
+  }
+
+  .preview-only-bar .btn {
+    padding: 8px;
+  }
+
+  .preview-only-bar .btn svg {
+    font-size: 17px;
+  }
+
+  /* "Back to templates" has an icon (FiArrowLeft) — safe to hide
+     its text entirely, the icon alone is still meaningful. */
+  .preview-only-bar .btn-ghost {
+    font-size: 0;
+  }
+
+  .preview-only-bar .btn-ghost span {
     display: none;
+  }
+
+  /* "Use This Template" has NO icon — hiding its text completely
+     would leave an empty, broken-looking button. Show a short
+     label instead so it's never blank. */
+  .preview-only-bar .btn-primary {
+    padding: 8px 16px;
+    font-size: 0;
+  }
+
+  .preview-only-bar .btn-primary span {
+    display: none;
+  }
+
+  .preview-only-bar .btn-primary::after {
+    content: "Use";
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .preview-only-title {
+    font-size: 12px;
   }
 
   .preview-only-page {
@@ -113,9 +212,20 @@
   }
 }
 
+/* Extra small / very narrow devices */
+@media (max-width: 340px) {
+  .preview-only-stage {
+    padding: 14px 8px 34px;
+  }
+
+  .preview-only-page {
+    zoom: 0.3;
+  }
+}
+
 /* Fallback for the rare browser without "zoom" support (older
-   Firefox): scale it visually and let the page scroll sideways
-   instead of silently showing it full-size and cut off. */
+   Firefox): let the page scroll sideways instead of silently
+   showing it full-size and cut off with no way to see the rest. */
 @supports not (zoom: 1) {
   .preview-only-stage {
     overflow-x: auto;
