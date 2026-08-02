@@ -236,7 +236,7 @@ const Landing = () => {
                   <h4>{t.name}</h4>
                   <Link to={`/preview/${t.id}`} className="template-strip-link">
                     {" "}
-                    //update Preview →
+                    Preview →
                   </Link>
                 </div>
               </motion.div>
