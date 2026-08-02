@@ -28,7 +28,7 @@ export const TEMPLATES = [
   },
   {
     id: 'minimal',
-    name: 'Minimal',
+    name: 'Clean',
     description: 'Generous whitespace and quiet typography. Lets your experience do the talking.',
     tags: ['Minimal'],
     defaultColor: '#111827',

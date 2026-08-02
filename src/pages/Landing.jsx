@@ -88,19 +88,19 @@ const STEPS = [
 
 const TESTIMONIALS = [
   {
-    name: "Priya Nair",
+    name: "Sakshi Rawat",
     role: "Marketing Manager",
     quote:
       "Landed three interview calls the same week I switched to my ResumeCraft resume.",
   },
   {
-    name: "Karan Verma",
+    name: "Sandeep Verma",
     role: "Software Engineer",
     quote:
       "The ATS template is exactly what I needed — clean, fast, and it actually parses correctly.",
   },
   {
-    name: "Sana Iqbal",
+    name: "Jubar Iqbal",
     role: "UX Designer",
     quote:
       "Finally a builder where the templates look as good as the mockups. Genuinely premium.",
@@ -235,7 +235,8 @@ const Landing = () => {
                 <div className="template-strip-info">
                   <h4>{t.name}</h4>
                   <Link to={`/preview/${t.id}`} className="template-strip-link">
-                    Preview →
+                    {" "}
+                    //update Preview →
                   </Link>
                 </div>
               </motion.div>
