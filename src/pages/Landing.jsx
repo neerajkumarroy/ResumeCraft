@@ -186,9 +186,9 @@ const Landing = () => {
               <Link to="/templates" className="btn btn-primary">
                 Browse Templates
               </Link>
-              <Link to="/dashboard" className="btn btn-outline">
+              {/* <Link to="/dashboard" className="btn btn-outline">
                 My Resumes
-              </Link>
+              </Link> */}
             </motion.div>
           </div>
 
